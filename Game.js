@@ -34,19 +34,19 @@ class Game {
   }
 
   checkForDefeat() {
-    if (this.health <= 0) {
+    if (this.health.value <= 0) {
       ctx.font = "60px Comic Sans MS";
       ctx.strokeStyle = "black";
       ctx.lineWidth = 8;
       ctx.strokeText("Game Over!", canvas.width / 2 - 160, canvas.height / 2);
       ctx.fillStyle = "#e65c00";
       ctx.fillText("Game Over!", canvas.width / 2 - 160, canvas.height / 2);
-      clearInterval(this.gameID());
+      cancelAnimationFrame(this.gameID());
     }
   }
 
   checkForVictory() {
-    if (this.saibamenKilled >= 10) {
+    if (this.saibamenKilled.value >= 10) {
       ctx.font = "60px Comic Sans MS";
       ctx.strokeStyle = "black";
       ctx.lineWidth = 8;
@@ -61,7 +61,7 @@ class Game {
         canvas.width / 2 - 200,
         canvas.height / 2
       );
-      clearInterval(this.gameID());
+      clearInterval(this.gameID);
     }
   }
 
@@ -88,7 +88,7 @@ class Game {
         this.detectCollisions(this.goku, eachSaibamen)
       ) {
         this.health -= 1;
-        document.querySelector("#health span").innerHTML = this.health;
+        document.querySelector('#health span').innerHTML = this.health;
         // console.log("collision");
         this.goku.recentlyHit = true;
         setTimeout(() => {
@@ -104,10 +104,8 @@ class Game {
         };
         if (this.detectCollisions(hitbox, eachSaibamen)) {
           this.saibamenKilled += 1;
-          document.querySelector(
-            "#killed span"
-          ).innerHTML = this.saibamenKilled;
-          console.log("hit");
+          document.querySelector('#killed span').innerHTML = this.saibamenKilled;
+          // console.log("hit");
           this.saibamenArrayLeft.splice(index, 1);
           this.goku.attack = false;
         }

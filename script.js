@@ -17,7 +17,7 @@ document.getElementById("start").onclick = function () {
 
 document.onkeydown = function (event) {
     const arrows = ["ArrowUp", "ArrowLeft", "ArrowRight", " ", "b"];
-    console.log(event.key);
+    // console.log(event.key);
   
     if (arrows.includes(event.key)) {
       event.preventDefault();
@@ -50,5 +50,3 @@ document.onkeyup = function (event) {
       currentGame.activeDirections.special = false;
     }
 };
-
-currentGame.gameLoop();
