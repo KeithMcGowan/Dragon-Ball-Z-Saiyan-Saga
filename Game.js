@@ -14,7 +14,7 @@ class Game {
     this.saibamen = new Saibamen();
     this.collision = false;
     this.health = 10;
-    this.saibamenKilled = 9;
+    this.saibamenKilled = 0;
     this.gameLoop();
   }
 
@@ -89,7 +89,7 @@ class Game {
       ) {
         this.health -= 1;
         document.querySelector("#health span").innerHTML = this.health;
-        console.log("collision");
+        // console.log("collision");
         this.goku.recentlyHit = true;
         setTimeout(() => {
           this.goku.recentlyHit = false;
