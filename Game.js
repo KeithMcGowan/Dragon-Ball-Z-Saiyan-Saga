@@ -34,34 +34,26 @@ class Game {
   }
 
   checkForDefeat() {
-    if (this.health.value <= 0) {
+    if (this.health <= 0) {
       ctx.font = "60px Comic Sans MS";
       ctx.strokeStyle = "black";
       ctx.lineWidth = 8;
-      ctx.strokeText("Game Over!", canvas.width / 2 - 160, canvas.height / 2);
+      ctx.strokeText("Game Over!", (canvas.width / 2 - 160), canvas.height / 2);
       ctx.fillStyle = "#e65c00";
-      ctx.fillText("Game Over!", canvas.width / 2 - 160, canvas.height / 2);
-      cancelAnimationFrame(this.gameID());
+      ctx.fillText("Game Over!", (canvas.width / 2 - 160), canvas.height / 2);
+      clearInterval(this.gameID());
     }
   }
 
   checkForVictory() {
-    if (this.saibamenKilled.value >= 10) {
+    if (this.saibamenKilled >= 10) {
       ctx.font = "60px Comic Sans MS";
       ctx.strokeStyle = "black";
       ctx.lineWidth = 8;
-      ctx.strokeText(
-        "Earth is Saved!",
-        canvas.width / 2 - 200,
-        canvas.height / 2
-      );
+      ctx.strokeText("Earth is Saved!", (canvas.width / 2 - 200), canvas.height / 2);
       ctx.fillStyle = "#e65c00";
-      ctx.fillText(
-        "Earth is Saved!",
-        canvas.width / 2 - 200,
-        canvas.height / 2
-      );
-      clearInterval(this.gameID);
+      ctx.fillText("Earth is Saved!", (canvas.width / 2 - 200), canvas.height / 2);
+      clearInterval(this.gameID());
     }
   }
 
@@ -89,7 +81,7 @@ class Game {
       ) {
         this.health -= 1;
         document.querySelector('#health span').innerHTML = this.health;
-        // console.log("collision");
+        console.log("collision");
         this.goku.recentlyHit = true;
         setTimeout(() => {
           this.goku.recentlyHit = false;
@@ -105,7 +97,7 @@ class Game {
         if (this.detectCollisions(hitbox, eachSaibamen)) {
           this.saibamenKilled += 1;
           document.querySelector('#killed span').innerHTML = this.saibamenKilled;
-          // console.log("hit");
+          console.log("hit");
           this.saibamenArrayLeft.splice(index, 1);
           this.goku.attack = false;
         }
