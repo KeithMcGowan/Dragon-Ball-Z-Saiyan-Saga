@@ -1,0 +1,74 @@
+body {
+    background-color: #e65c00;
+}
+
+#logo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo h2 {
+    font-size: 3.5em;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: #020819 10px -10px 7px;
+    position: absolute;
+    z-index: 999;
+    margin: 0 auto;
+    left: 15%;
+    right: 0;
+    top: 70%; /* Adjust this value to move the positioned div up and down */
+    width: 80%;
+}
+
+#status {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    margin-bottom: -25vh;    
+}
+
+.main-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+#controller {
+    height: 9em;
+    width: 20em;
+    /* margin-left: 10rem; */
+}
+
+canvas {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: black;
+    background-image: url('./Happy-Goku(no-bkg).png');
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    margin-top: -20vh;
+}
+
+#gaming {
+    height: 15em;
+    width: 15em;
+    margin-right: 5rem;
+}
+
+#starter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -20vh;
+}
+
+#start {
+    font-size: 30px;
+}

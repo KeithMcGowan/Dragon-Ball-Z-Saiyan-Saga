@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball Z: Saiyan Saga</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <div id='logo'>
+        <img src="./DBZ-Logo.png" alt="Dragon Ball Z logo">
+        <h2>Saiyan Saga</h2>
+    </div>
+    
+    <div id="status">
+
+        <h2 id="health">Health:<span>10</span></h2>
+
+        <h2 id="special">Special:<span>0</span></h2>
+
+        <h2 id='killed'>Saibamen Killed:<span>0</span></h2>
+
+    </div>
+    
+    <div class="main-div">
+
+        <img  id='controller' src="./NES-Controller.png" alt="Controls">
+
+        <canvas id='example' width='800' height='500'></canvas>
+
+        <img id='gaming' src="./Goku-Playing-Video-Games.png" alt="Goku playing video games">
+        
+    </div>
+    
+    <div id='starter'>
+
+        <button id="start">Save Earth!</button>
+
+    </div>
+
+    <script src='./Levels.js'></script>
+    <script src='./Goku.js'></script>
+    <script src='./Enemies.js'></script>
+    <script src='./Game.js'></script>
+    <script src='./script.js'></script>
+</body>
+</html>
